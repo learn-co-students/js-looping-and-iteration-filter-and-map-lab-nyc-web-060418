@@ -14,20 +14,15 @@ function driverNamesWithRevenueOver(drivers, revenue) {
 }
 
 //REVIEW THIS ONE. 
-function exactMatch(drivers, matcher) {
-  return drivers.filter(function (driver) {
-    let matches = [false];
-
-    for (const key in matcher) {
-      matches = driver[key] === matcher[key];
-    }
-
-    return matches;
-  });
+function exactMatch(drivers, obj) {
+  const key = Object.keys(obj)[0];
+  return drivers.filter(function(driver){
+    return driver[key] === obj[key];
+  })
 }
 
-function exactMatchToList(drivers, matcher) {
-  let clone = exactMatch(drivers, matcher);
+function exactMatchToList(drivers, obj) {
+  let clone = exactMatch(drivers, obj);
   return clone.map(function (driver) {
     return driver.name;
   });
