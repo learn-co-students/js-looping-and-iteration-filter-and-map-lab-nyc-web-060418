@@ -65,8 +65,8 @@ describe('index.js', function () {
 
     it('returns an empty array if there is no match', function () {
       expect(exactMatch(extendedDrivers, { revenue: 500 })).to.eql([]);
-
-      expect(exactMatch(extendedDrivers, { name: 'Alex' })).to.eql([]);
+      / ``12
+        expect(exactMatch(extendedDrivers, { name: 'Alex' })).to.eql([]);
     });
   });
 
